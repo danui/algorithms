@@ -1,0 +1,13 @@
+*.db
+*.o
+*~
+*~-journal
+.DS_store
+/out/
+/javadoc-out/
+/tmp*
+/.sconsign.dblite
+/target/
+
+# IntelliJ Files
+/*.iml
