@@ -1,9 +1,9 @@
-package com.danui.editdistance;
+package com.danui.algorithms;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class UseCaseTest {
+public class EditDistanceTest {
 
     // Example from https://en.wikipedia.org/wiki/Levenshtein_distance
     @Test

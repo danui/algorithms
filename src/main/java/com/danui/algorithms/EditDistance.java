@@ -1,4 +1,4 @@
-package com.danui.editdistance;
+package com.danui.algorithms;
 
 /**
  * https://en.wikipedia.org/wiki/Levenshtein_distance
