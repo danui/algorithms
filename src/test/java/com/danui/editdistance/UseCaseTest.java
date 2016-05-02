@@ -7,17 +7,17 @@ public class UseCaseTest {
 
     // Example from https://en.wikipedia.org/wiki/Levenshtein_distance
     @Test
-    public void exampleUseCase_1() {
-        String s = "kitten";
-        String t = "sitting";
+    public void exampleUseCase_1() throws Exception {
+        String t = "kitten";
+        String s = "sitting";
         assertEquals(3, EditDistance.solve(s, t));
     }
 
     // Example from https://en.wikipedia.org/wiki/Levenshtein_distance
     @Test
-    public void exampleUseCase_2() {
-        String s = "Saturday";
-        String t = "Sunday";
+    public void exampleUseCase_2() throws Exception {
+        String t = "Saturday";
+        String s = "Sunday";
         assertEquals(3, EditDistance.solve(s, t));
     }
 
