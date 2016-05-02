@@ -11,6 +11,9 @@ build: pom.xml $(SRC_FILES)
 check:
 	mvn test
 
+install:
+	mvn clean install
+
 clean:
 	find . -name "*~" -exec rm -vf \{\} \+
 	rm -rf target
