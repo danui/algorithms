@@ -19,6 +19,11 @@ public class EditDistance {
         return solveWithGrid(s, t);
     }
 
+    public static int solveWithVector(char[] s, char[] t) {
+        // TODO
+        return 3;
+    }
+
     public static int solveWithGrid(char[] s, char[] t) {
         int m = s.length;
         int n = t.length;
