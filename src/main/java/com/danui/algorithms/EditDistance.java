@@ -16,12 +16,45 @@ public class EditDistance {
      * @return Number of edits required to transform char array 's' into 't'.
      */
     public static int solve(char[] s, char[] t) {
-        return solveWithGrid(s, t);
+        return solveWithVector(s, t);
     }
 
     public static int solveWithVector(char[] s, char[] t) {
-        // TODO
-        return 3;
+        int m = s.length;
+        int n = t.length;
+        if (m == 0) return n;
+        if (n == 0) return m;
+        // Reduce memory requirements. If 's' is shorter than 't' then swap
+        // them.
+        if (m < n) return solveWithVector(t, s);
+
+        // Allocate two vectors and have a spare reference for swapping between
+        // row iterations.
+        int[] prev = new int[n+1];
+        int[] curr = new int[n+1];
+        int[] swap = null;
+
+        // Initialise Row 0 into 'prev'.
+        for (int j = 0; j <= n; ++j) {
+            prev[j] = j;
+        }
+
+        for (int i = 1; i <= m; ++i) {
+            char a = s[i-1];
+            curr[0] = i;
+            for (int j = 1; j <= n; ++j) {
+                char b = t[j-1];
+                int substitutionCost = (a==b) ? 0 : 1;
+                curr[j] = minimum(
+                    prev[j] + 1,                    // deletion
+                    curr[j-1] + 1,                  // insertion
+                    prev[j-1] + substitutionCost);  // substitution
+            }
+            swap = curr;
+            curr = prev;
+            prev = swap;
+        }
+        return prev[n];
     }
 
     public static int solveWithGrid(char[] s, char[] t) {
