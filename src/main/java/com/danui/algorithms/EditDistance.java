@@ -16,10 +16,10 @@ public class EditDistance {
      * @return Number of edits required to transform char array 's' into 't'.
      */
     public static int solve(char[] s, char[] t) {
-        return solveWith2DGrid(s, t);
+        return solveWithGrid(s, t);
     }
 
-    public static int solveWith2DGrid(char[] s, char[] t) {
+    public static int solveWithGrid(char[] s, char[] t) {
         int m = s.length;
         int n = t.length;
         if (m == 0) return n;
